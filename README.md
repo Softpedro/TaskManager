@@ -27,6 +27,7 @@ Incluye funcionalidades avanzadas como drag & drop, filtros, PWA offline, export
 
 ## 🏛️ Arquitectura
 
+```
 src/
 ├── App.tsx
 ├── main.tsx
@@ -48,7 +49,7 @@ src/
 ├── types/
 │   ├── task.ts
 └── index.css
-
+```
 
 ## 🧩 Features implementadas
 
