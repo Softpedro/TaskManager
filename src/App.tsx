@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from 'react';
+import TaskForm from './features/tasks/TaskForm';
+import TaskBoard from './features/tasks/TaskBoard';
+import FilterBar from './features/tasks/FilterBar';
+import ThemeToggle from './features/theme/ThemeToggle';
+import Dashboard from './features/dashboard/Dashboard';
+import { useThemeStore } from './store/useThemeStore';
+import { ToastContainer } from 'react-toastify';
+import TaskExportImport from './features/tasks/TaskExportImport';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const { theme } = useThemeStore();
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="dark:bg-gray-900">
+      <div className="max-w-4xl mx-auto py-8 px-4 dark:bg-gray-900">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl font-bold text-center dark:text-white">
+          Task Manager
+        </h1>
+        <ThemeToggle />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+      <Dashboard />
+      <TaskExportImport />
+      <FilterBar />
+      <TaskForm />
+      <TaskBoard />
+
+        <ToastContainer position="bottom-right" autoClose={3000} />
+      </div>
+    </div>
+  );
+};
+
+export default App;
