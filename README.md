@@ -31,27 +31,24 @@ src/
 ├── App.tsx
 ├── main.tsx
 ├── features/
-│ ├── tasks/
-│ │ ├── TaskForm.tsx
-│ │ ├── TaskBoard.tsx
-│ │ ├── SortableTask.tsx
-│ │ ├── FilterBar.tsx
-│ │ ├── TaskExportImport.tsx
-│ └── dashboard/
-│ ├── Dashboard.tsx
-│ └── theme/
-│ ├── ThemeToggle.tsx
+│   ├── tasks/
+│   │   ├── TaskForm.tsx
+│   │   ├── TaskBoard.tsx
+│   │   ├── SortableTask.tsx
+│   │   ├── FilterBar.tsx
+│   │   ├── TaskExportImport.tsx
+│   ├── dashboard/
+│   │   ├── Dashboard.tsx
+│   ├── theme/
+│   │   ├── ThemeToggle.tsx
 ├── store/
-│ ├── useTaskStore.ts
-│ ├── useFilterStore.ts
-│ ├── useThemeStore.ts
+│   ├── useTaskStore.ts
+│   ├── useFilterStore.ts
+│   ├── useThemeStore.ts
 ├── types/
-│ ├── task.ts
+│   ├── task.ts
 └── index.css
 
-
-
----
 
 ## 🧩 Features implementadas
 
